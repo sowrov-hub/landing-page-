@@ -312,6 +312,11 @@
     .reveal, .reveal-item{ opacity:1; transform:none; transition:none; }
     .float-chip{ animation:none; }
   }
+
+  /* ---------------- headline rotator ---------------- */
+  .hero h1{ min-height:3.4em; display:flex; align-items:center; justify-content:center; }
+  .headline-rotator{ display:inline-block; transition:opacity .35s ease, transform .35s ease; }
+  .headline-rotator.swapping{ opacity:0; transform:translateY(6px); }
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -347,7 +352,7 @@ src="https://www.facebook.com/tr?id=2327441601343250&ev=PageView&noscript=1"
         <svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="7" fill="#2A46E8"/><path d="M4 7.2 L6 9.2 L10 4.8" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         47-point Google visibility diagnostic
       </div>
-      <h1 class="hero-anim">Turn Google Into An <br class="brk">Extra <span class="highlight">$50k&ndash;$70k</span> A Month <br class="brk">For Your Roofing Business</h1>
+      <h1 class="hero-anim"><span id="heroHeadline" class="headline-rotator">From <span class="highlight">$6K</span> a Month to <span class="highlight">$60K&ndash;$80K</span> a Month &mdash; Using Nothing But Google</span></h1>
       <p class="lede hero-anim">A 47-point diagnostic checklist that shows you exactly where you&rsquo;re losing leads on Google &mdash; the same fundamentals that helped GV Roof Repairs grow from $6k&ndash;8k a month to $60k&ndash;80k a month, with $0 spent on ads. Takes about 45 minutes.</p>
       <div class="btn-row hero-anim">
         <a href="https://showrovai.gumroad.com/l/googleleadchecklist?wanted=true" class="btn" target="_blank" rel="noopener">Get the Checklist</a>
@@ -721,6 +726,28 @@ src="https://www.facebook.com/tr?id=2327441601343250&ev=PageView&noscript=1"
       document.querySelectorAll('[data-count]').forEach(countUp);
     }, 500);
   });
+
+  // headline rotator — cycles through 4 transformation-based headlines every 5s
+  (function(){
+    var headlines = [
+      'From <span class="highlight">$6K</span> a Month to <span class="highlight">$60K&ndash;$80K</span> a Month &mdash; Using Nothing But Google',
+      'How GV Roof Repairs Went From 2&ndash;5 Jobs a Month to <span class="highlight">Fully Booked</span> &mdash; No Ad Spend',
+      'Stop <span class="highlight">Losing Jobs</span> to Roofers Who Rank Above You on Google',
+      'How a Roofing Company <span class="highlight">10X&rsquo;d Its Revenue</span> Without Spending a Dollar on Ads'
+    ];
+    var idx = 0;
+    var el = document.getElementById('heroHeadline');
+    if(!el) return;
+    if(prefersReduced) return; // keep the first headline static for reduced-motion users
+    setInterval(function(){
+      idx = (idx + 1) % headlines.length;
+      el.classList.add('swapping');
+      setTimeout(function(){
+        el.innerHTML = headlines[idx];
+        el.classList.remove('swapping');
+      }, 350);
+    }, 5000);
+  })();
 </script>
 
 </body>
