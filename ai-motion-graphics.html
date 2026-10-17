@@ -160,6 +160,14 @@ h1,h2,h3{font-feature-settings:"ss01"}
 @media(max-width:1023px){.wyg{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:639px){.wyg{grid-template-columns:1fr}}
 @media(max-width:639px){.ctarow{flex-direction:column;align-items:stretch;width:100%}.ctarow a{width:100%}}
+#promo{position:relative;z-index:55;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 18px;padding:10px 16px;background:linear-gradient(90deg,#0E0E0E,#1B1B3A 50%,#0E0E0E);color:#fff!important;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:600;letter-spacing:-.01em;text-align:center}
+#promo:hover{color:#fff}
+#promo .pt b{color:#B9B9FF;font-weight:700}#promo .pt s{opacity:.55;margin-left:4px}
+#promo .pc{display:inline-flex;align-items:center;gap:4px}
+#promo .pc>span{opacity:.75;font-weight:500;margin-right:6px}
+#promo i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:13px;min-width:30px;padding:3px 6px;border-radius:7px;background:rgba(255,255,255,.12);text-align:center;font-variant-numeric:tabular-nums}
+#promo em{font-style:normal;opacity:.6;font-size:12px;margin-right:4px}
+@media(max-width:480px){#promo{font-size:13px;padding:9px 12px}}
 /* nav */
 nav{background:rgba(250,250,247,.72)!important;border-bottom:1px solid rgba(91,91,247,.1)!important}
 /* hero headline */
@@ -229,6 +237,7 @@ button[onclick^="faq"]{transition:color .25s,padding .25s}button[onclick^="faq"]
 <div style="background:#FAFAF7;color:#0E0E0E;font-family:Inter,system-ui,sans-serif;overflow-x:clip">
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
+<a id="promo" href="#pricing" aria-label="Launch price countdown"><span class="pt">Launch price <b>$12</b> <s>$29</s></span><span class="pc"><span>Ends in</span><i id="cd-d">10</i><em>d</em><i id="cd-h">00</i><em>h</em><i id="cd-m">00</i><em>m</em><i id="cd-s">00</i><em>s</em></span></a>
 <nav data-screen-label="Nav" style="position:sticky;top:0;z-index:50;background:rgba(250,250,247,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,14,14,.06)">
   <div style="max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px">
     <a href="#top" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;letter-spacing:-0.03em;color:#0E0E0E">showrov.studio</a>
@@ -238,7 +247,7 @@ button[onclick^="faq"]{transition:color .25s,padding .25s}button[onclick^="faq"]
 
 <header id="top" data-screen-label="Hero" style="max-width:1200px;margin:0 auto;padding:clamp(48px,8vw,104px) 20px clamp(64px,8vw,112px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(48px,6vw,80px);align-items:center">
   <div style="display:flex;flex-direction:column;align-items:flex-start">
-    <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(44px,6.4vw,84px);line-height:0.98;letter-spacing:-0.045em;text-wrap:balance"><span class="w"><span style="--i:0">Make</span></span> <span class="w"><span style="--i:1">$1,000-looking</span></span> <span class="w"><span style="--i:2">motion</span></span> <span class="w"><span style="--i:3">videos</span></span> <span class="w"><span style="--i:4">with</span></span> <span class="w"><span style="--i:5">AI.</span></span></h1>
+    <h1 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(44px,6.4vw,84px);line-height:0.98;letter-spacing:-0.045em;text-wrap:balance"><span class="w"><span style="--i:0">Make</span></span> <span class="w"><span style="--i:1">videos</span></span> <span class="w"><span style="--i:2">brands</span></span> <span class="w"><span style="--i:3">pay</span></span> <span class="w"><span style="--i:4">for</span></span> <span class="w"><span style="--i:5">with</span></span> <span class="w"><span style="--i:6">Claude.</span></span></h1>
     <div style="margin-top:18px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(30px,3.8vw,48px);letter-spacing:-0.04em;color:#5B5BF7;line-height:1.1"><span aria-live="polite" class="rotwin"><span class="rotlist"><span>Motion graphics</span><span>Animations</span><span>SaaS explainers</span><span>App launch videos</span><span>Motion graphics</span></span></span></div>
     <p style="margin:24px 0 0;max-width:520px;font-size:clamp(17px,1.4vw,19px);line-height:1.55;color:#4A4A45;text-wrap:pretty">One proven process. The exact prompts, templates and workflow I use to turn any idea into a polished video in under 90 minutes.</p>
     <div style="margin-top:36px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;width:100%">
@@ -527,6 +536,7 @@ function faq(k){var r=document.documentElement.style,o=r.getPropertyValue('--r'+
 function snd(b){var f=b.parentElement.querySelector('iframe');if(!f)return;var lab=b.querySelector('[data-sound-label]'),on=lab&&lab.textContent==='Tap for sound';var cmd=function(fr,fn){try{fr.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:[]}),'*')}catch(e){}};document.querySelectorAll('iframe[data-yt]').forEach(function(x){cmd(x,'mute')});document.querySelectorAll('[data-sound-label]').forEach(function(l){l.textContent='Tap for sound'});if(on){cmd(f,'unMute');cmd(f,'setVolume');cmd(f,'playVideo');lab.textContent='Sound on'}}
 (function(){var bar=document.getElementById('mbar'),hero=document.getElementById('top');if(!bar||!hero||!('IntersectionObserver' in window))return;new IntersectionObserver(function(a){var e=a[0];bar.style.transform=(!e.isIntersecting&&e.boundingClientRect.top<0)?'translateY(0)':'translateY(120%)'}).observe(hero)})();
 
+(function(){var end=new Date('2026-10-27T23:59:59+06:00').getTime(),bar=document.getElementById('promo');if(!bar)return;var D=document.getElementById('cd-d'),H=document.getElementById('cd-h'),M=document.getElementById('cd-m'),S=document.getElementById('cd-s');function p(n){return n<10?'0'+n:''+n}function t(){var l=end-Date.now();if(l<=0){bar.style.display='none';return false}var s=Math.floor(l/1000);D.textContent=p(Math.floor(s/86400));H.textContent=p(Math.floor(s%86400/3600));M.textContent=p(Math.floor(s%3600/60));S.textContent=p(s%60);return true}if(t()){var iv=setInterval(function(){if(!t())clearInterval(iv)},1000)}})();
 (function(){
 var rv=[].slice.call(document.querySelectorAll('.rv'));
 rv.forEach(function(el){var sibs=[].filter.call(el.parentElement.children,function(c){return c.classList.contains('rv')});el.style.setProperty('--d',Math.max(0,sibs.indexOf(el))*90+'ms')});
