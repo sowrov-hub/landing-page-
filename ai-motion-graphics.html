@@ -354,13 +354,9 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
     </div>
     <div class="rv" style="display:flex;justify-content:center">
       <div class="float" style="width:min(250px,66vw);padding:9px;border-radius:40px;background:#0E0E0E;box-shadow:0 40px 80px -30px rgba(160,20,10,.45),inset 0 0 0 1.5px #2A2A2A">
-        <!-- INSTAGRAM VIDEO SLOT: set IG_REEL_URL in the script at the bottom of this file -->
+        
         <div id="ig-slot" style="position:relative;aspect-ratio:9/16;border-radius:32px;overflow:hidden;background:linear-gradient(160deg,#2a0f0d,#0b0b0b)">
-          <div id="ig-ph" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;text-align:center;padding:24px">
-            <span style="width:64px;height:64px;border-radius:50%;background:#E5231B;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(229,35,27,.2)"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><polygon points="8,5 19,12 8,19"/></svg></span>
-            <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.02em">Faceless reel preview</span>
-            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:#FF8A80">INSTAGRAM</span>
-          </div>
+          <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/bC49X3cX8ok?autoplay=1&mute=1&loop=1&playlist=bC49X3cX8ok&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="Faceless reel" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe><button data-sound="1" onclick="snd(this)" style="position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;height:34px;padding:0 13px 0 9px;border-radius:999px;border:0;cursor:pointer;background:#E5231B;box-shadow:0 8px 20px -6px rgba(229,35,27,.8);color:#FFFFFF;font-family:Inter,sans-serif;font-weight:600;font-size:12.5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15" fill="currentColor"></polygon><path d="M16.5 9 a4 4 0 0 1 0 6"></path></svg><span data-sound-label="1">Tap for sound</span></button>
         </div>
       </div>
     </div>
@@ -623,7 +619,7 @@ document.querySelectorAll('.card,.dcard').forEach(function(c){c.addEventListener
 </script>
 <script>
 /* ===== INSTAGRAM VIDEO: paste your reel link between the quotes, e.g. 'https://www.instagram.com/reel/XXXXXXXX/' ===== */
-var IG_REEL_URL='https://www.instagram.com/reel/De4nsJqSjcP/';
+var IG_REEL_URL='';
 (function(){var m=IG_REEL_URL.match(/instagram\.com\/(?:reel|reels|p)\/([\w-]+)/);if(!m)return;var slot=document.getElementById('ig-slot'),ph=document.getElementById('ig-ph');if(!slot)return;var f=document.createElement('iframe');f.src='https://www.instagram.com/reel/'+m[1]+'/embed/';f.title='Instagram reel';f.loading='lazy';f.allowFullscreen=true;f.setAttribute('allow','autoplay; encrypted-media; picture-in-picture');f.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff';slot.appendChild(f);if(ph)ph.style.display='none'})();
 </script>
 </body></html>
