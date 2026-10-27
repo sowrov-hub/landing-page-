@@ -269,6 +269,22 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
 #cc.big{width:58px;height:58px;margin:-29px 0 0 -29px;background:rgba(229,35,27,.1)}
 @media(hover:hover) and (pointer:fine){#cc{display:block}}
 .w:hover>span{transition:transform .25s;transform:translateY(-6px);color:#E5231B}
+/* ===== calm mode: light interactivity, no heavy animation ===== */
+.aurora i{animation:none!important}
+body::after{display:none!important}
+.float,.float.f2{animation:none!important}
+.w>span{animation:none!important}
+.btn::after{display:none!important}
+.pcard::before{animation:none!important}
+.stepn::after{display:none!important}
+.stepline{animation:none!important;background-size:100% 100%!important}
+section[data-screen-label="Final CTA"],section[data-screen-label="Final CTA"]::before,section[data-screen-label="Final CTA"]::after{animation:none!important}
+.js .rv{transform:translateY(10px);filter:none;transition:opacity .45s ease var(--d,0ms),transform .45s ease var(--d,0ms)}
+.js .rv.in{transform:none}
+.card:hover{transform:translateY(-3px)!important}
+.card:hover>div:first-child:not(:only-child){transform:none}
+.mqt{animation-duration:70s}
+.mq:hover .mqt{animation-play-state:paused}
 </style>
 </head>
 <body data-tab="reels">
@@ -300,14 +316,14 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
   <div class="hphone" style="position:relative;display:flex;justify-content:center;padding:24px 0">
     <div style="position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(229,35,27,.16);filter:blur(70px);top:12%"></div>
     <div style="position:relative">
-      <div style="display:flex;gap:18px;align-items:flex-start"><div class="float" style="width:min(220px,28vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
+      <div style="display:flex;gap:18px;align-items:flex-start"><div class="float" style="width:min(262px,30vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
         <div style="position:relative;aspect-ratio:9/16;border-radius:36px;overflow:hidden;background:repeating-linear-gradient(135deg,#1A1A22 0 10px,#20202A 10px 20px)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/bC49X3cX8ok?autoplay=1&mute=1&loop=1&playlist=bC49X3cX8ok&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="AI motion video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe>
           <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#0E0E0E"></div>
           <button data-sound="1" onclick="snd(this)" style="position:absolute;right:14px;bottom:14px;z-index:3;display:flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:999px;border:0;cursor:pointer;background:#E5231B;box-shadow:0 8px 20px -6px rgba(229,35,27,.8);color:#FFFFFF;font-family:Inter,sans-serif;font-weight:600;font-size:13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15" fill="currentColor"></polygon><path d="M16.5 9 a4 4 0 0 1 0 6"></path></svg><span data-sound-label="1">Tap for sound</span></button>
         </div>
       </div>
-      <div class="float f2" style="margin-top:56px;width:min(220px,28vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
+      <div class="float f2" style="margin-top:56px;width:min(262px,30vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
         <div style="position:relative;aspect-ratio:9/16;border-radius:36px;overflow:hidden;background:repeating-linear-gradient(135deg,#1A1A22 0 10px,#20202A 10px 20px)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/ptkGe-zArwE?autoplay=1&mute=1&loop=1&playlist=ptkGe-zArwE&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="AI motion video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe>
           <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#0E0E0E"></div>
@@ -334,7 +350,7 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
   <div class="hphone" style="position:relative;display:flex;justify-content:center;padding:24px 0">
     <div style="position:absolute;width:70%;aspect-ratio:1;border-radius:50%;background:rgba(229,35,27,.16);filter:blur(70px);top:12%"></div>
     <div style="position:relative">
-      <div class="float" style="width:min(290px,70vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
+      <div class="float" style="width:min(330px,70vw);padding:10px;border-radius:46px;background:#0E0E0E;box-shadow:0 50px 90px -30px rgba(160,20,10,.45),0 10px 24px -10px rgba(14,14,14,.35),inset 0 0 0 1.5px #2A2A2A">
         <div style="position:relative;aspect-ratio:9/16;border-radius:36px;overflow:hidden;background:repeating-linear-gradient(135deg,#1A1A22 0 10px,#20202A 10px 20px)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/uk_oopU6s6Y?autoplay=1&mute=1&loop=1&playlist=uk_oopU6s6Y&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="AI motion video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe>
           <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:999px;background:#0E0E0E"></div>
@@ -353,7 +369,7 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
   <div style="max-width:1200px;margin:0 auto;border-radius:28px;background:#F6F5F3;border:1px solid #EAEAE4;padding:clamp(32px,5vw,64px) clamp(20px,4vw,56px)">
     <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.01em;color:#E5231B;text-align:center;margin:0 0 28px">Motion videos made with the kit</div>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:clamp(32px,4vw,56px)">
-      <div class="proofphone float f2" style="flex:0 0 auto;width:min(230px,62vw);padding:8px;border-radius:38px;background:#0E0E0E;box-shadow:0 36px 70px -28px rgba(160,20,10,.4),inset 0 0 0 1.5px #2A2A2A">
+      <div class="proofphone float f2" style="flex:0 0 auto;width:min(270px,70vw);padding:8px;border-radius:38px;background:#0E0E0E;box-shadow:0 36px 70px -28px rgba(160,20,10,.4),inset 0 0 0 1.5px #2A2A2A">
         <div style="position:relative;aspect-ratio:9/16;border-radius:30px;overflow:hidden;background:repeating-linear-gradient(135deg,#1A1A22 0 10px,#20202A 10px 20px)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/ZGoRBAecnDc?autoplay=1&mute=1&loop=1&playlist=ZGoRBAecnDc&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="AI motion video" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe>
           <div style="position:absolute;top:10px;left:50%;transform:translateX(-50%);width:66px;height:20px;border-radius:999px;background:#0E0E0E"></div>
@@ -387,12 +403,12 @@ body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;bac
   </div>
 </section>
 
-<section data-t="reels" id="faceless" data-screen-label="Faceless" style="padding:0 20px 48px"><div class="rv" style="display:flex;justify-content:center"><div style="display:flex;gap:12px;align-items:flex-start;justify-content:center"><div class="float" style="width:min(165px,43vw);padding:9px;border-radius:40px;background:#0E0E0E;box-shadow:0 40px 80px -30px rgba(160,20,10,.45),inset 0 0 0 1.5px #2A2A2A">
+<section data-t="reels" id="faceless" data-screen-label="Faceless" style="padding:0 8px 48px"><div class="rv" style="display:flex;justify-content:center"><div style="display:flex;gap:12px;align-items:flex-start;justify-content:center"><div class="float" style="width:min(184px,46vw);padding:9px;border-radius:40px;background:#0E0E0E;box-shadow:0 40px 80px -30px rgba(160,20,10,.45),inset 0 0 0 1.5px #2A2A2A">
         
         <div id="ig-slot" style="position:relative;aspect-ratio:9/16;border-radius:32px;overflow:hidden;background:linear-gradient(160deg,#2a0f0d,#0b0b0b)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/bC49X3cX8ok?autoplay=1&mute=1&loop=1&playlist=bC49X3cX8ok&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="Faceless reel" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe><button data-sound="1" onclick="snd(this)" style="position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;height:34px;padding:0 13px 0 9px;border-radius:999px;border:0;cursor:pointer;background:#E5231B;box-shadow:0 8px 20px -6px rgba(229,35,27,.8);color:#FFFFFF;font-family:Inter,sans-serif;font-weight:600;font-size:12.5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15" fill="currentColor"></polygon><path d="M16.5 9 a4 4 0 0 1 0 6"></path></svg><span data-sound-label="1">Tap for sound</span></button>
         </div>
-      </div><div class="float f2" style="margin-top:36px;width:min(165px,43vw);padding:9px;border-radius:40px;background:#0E0E0E;box-shadow:0 40px 80px -30px rgba(160,20,10,.45),inset 0 0 0 1.5px #2A2A2A">
+      </div><div class="float f2" style="margin-top:36px;width:min(184px,46vw);padding:9px;border-radius:40px;background:#0E0E0E;box-shadow:0 40px 80px -30px rgba(160,20,10,.45),inset 0 0 0 1.5px #2A2A2A">
         
         <div  style="position:relative;aspect-ratio:9/16;border-radius:32px;overflow:hidden;background:linear-gradient(160deg,#2a0f0d,#0b0b0b)">
           <iframe data-yt="1" src="https://www.youtube-nocookie.com/embed/ptkGe-zArwE?autoplay=1&mute=1&loop=1&playlist=ptkGe-zArwE&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&disablekb=1&enablejsapi=1" title="Faceless reel" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none"></iframe><button data-sound="1" onclick="snd(this)" style="position:absolute;right:12px;bottom:12px;z-index:3;display:flex;align-items:center;gap:6px;height:34px;padding:0 13px 0 9px;border-radius:999px;border:0;cursor:pointer;background:#E5231B;box-shadow:0 8px 20px -6px rgba(229,35,27,.8);color:#FFFFFF;font-family:Inter,sans-serif;font-weight:600;font-size:12.5px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="4,9 8,9 13,5 13,19 8,15 4,15" fill="currentColor"></polygon><path d="M16.5 9 a4 4 0 0 1 0 6"></path></svg><span data-sound-label="1">Tap for sound</span></button>
@@ -690,13 +706,6 @@ function snd(b){var f=b.parentElement.querySelector('iframe');if(!f)return;var l
 
 (function(){var end=new Date('2026-11-04T23:59:59+06:00').getTime(),bar=document.getElementById('promo');if(!bar)return;var D=document.getElementById('cd-d'),H=document.getElementById('cd-h'),M=document.getElementById('cd-m'),S=document.getElementById('cd-s');function p(n){return n<10?'0'+n:''+n}function t(){var l=end-Date.now();if(l<=0){bar.style.display='none';return false}var s=Math.floor(l/1000);D.textContent=p(Math.floor(s/86400));H.textContent=p(Math.floor(s%86400/3600));M.textContent=p(Math.floor(s%3600/60));S.textContent=p(s%60);return true}if(t()){var iv=setInterval(function(){if(!t())clearInterval(iv)},1000)}})();
 
-(function(){var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;if(!fine)return;
-var cc=document.createElement('div');cc.id='cc';document.body.appendChild(cc);
-document.addEventListener('pointermove',function(e){cc.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)';document.body.style.setProperty('--px',e.clientX+'px');document.body.style.setProperty('--py',e.clientY+'px');cc.classList.toggle('big',!!e.target.closest('a,button,.card,.dcard'))});
-document.querySelectorAll('.card,.dcard').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(800px) rotateY('+x*8+'deg) rotateX('+(-y*8)+'deg) translateY(-6px)'});c.addEventListener('pointerleave',function(){c.style.transform=''})});
-document.querySelectorAll('.btn,.btn2').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.translate=((e.clientX-r.left-r.width/2)*.14)+'px '+((e.clientY-r.top-r.height/2)*.2)+'px'});b.addEventListener('pointerleave',function(){b.style.translate=''})});
-var ph=document.querySelectorAll('header .float,.proofphone');document.addEventListener('pointermove',function(e){var x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);ph.forEach(function(p,i){p.style.translate=(x*(i?-14:14))+'px '+(y*10)+'px'})});
-})();
 (function(){
 var rv=[].slice.call(document.querySelectorAll('.rv'));
 rv.forEach(function(el){var sibs=[].filter.call(el.parentElement.children,function(c){return c.classList.contains('rv')});el.style.setProperty('--d',Math.max(0,sibs.indexOf(el))*90+'ms')});
