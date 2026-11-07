@@ -99,6 +99,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 .vid.yt .snd{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;color:#fff;font:600 14px/1 inherit;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;z-index:2}
 .vid.yt .snd{font-family:inherit}
 .vid.yt .pill{background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 16px;backdrop-filter:blur(6px)}
+.btn.soon{background:#2A2A2E!important;color:#B5B5BD!important;border:1px solid var(--line);cursor:default;box-shadow:none!important;transform:none!important}
 .vid.f{padding:0;background:#000}
 .cap{text-align:center;color:var(--mut);font-size:14px;margin-top:10px}
 </style></head><body>
@@ -109,13 +110,13 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 <header class="dh"><div class="wrap">
   <a class="back" href="shop.html#products">← All products</a>
   <h1>Motion Ad For Brands With Claude</h1><p>Turn a brand, app or website into a polished motion ad. Watch the example below.</p>
-  <div class="buy"><span class="price">$14.99</span><a class="btn" id="buy" href="#">Buy now →</a></div>
+  <div class="buy"><span class="price">$14.99</span><a class="btn soon" id="buy" href="#" onclick="return false">Coming soon</a></div>
 </div></header>
 <section class="sec"><div class="wrap">
   <div class="eb" style="justify-content:center">WATCH BEFORE YOU BUY</div>
   <h2 style="text-align:center">See what you get.</h2>
   <div class="vg n1"><div><div class="vid r169" data-label="Motion ad video 1" data-yt="3Ms3Hn_NAac" data-src="">Motion ad video<br>add video</div></div><div><div class="vid r169" data-label="Motion ad video 2" data-yt="A_hdQytB4CM" data-src="">Motion ad video<br>add video</div></div></div>
-  <div style="text-align:center;margin-top:40px"><a class="btn" id="buy2" href="#">Buy now · $14.99 →</a></div>
+  <div style="text-align:center;margin-top:40px"><a class="btn soon" id="buy2" href="#" onclick="return false">Coming soon</a></div>
 </div></section>
 <footer><div class="wrap">
   <div><h4>Video systems you run with Claude.</h4><p>© showrov.studio</p></div>
@@ -128,7 +129,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   /* VIDEOS: on each .vid set data-yt="YOUTUBE_ID" (a YouTube video or Short) or data-src="file.mp4" */
   document.querySelectorAll('.vid').forEach(function(v){
     var y=v.getAttribute('data-yt'),s=v.getAttribute('data-src');
-    if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1" title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}v._off=function(){if(on){on=false;cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound'}};bb.addEventListener('click',function(){document.querySelectorAll('.vid.yt').forEach(function(o){if(o!==v&&o._off)o._off()});on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
+    if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1&origin='+encodeURIComponent(location.origin)+'" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}v._off=function(){if(on){on=false;cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound'}};bb.addEventListener('click',function(){document.querySelectorAll('.vid.yt').forEach(function(o){if(o!==v&&o._off)o._off()});on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
     else if(s){v.classList.add('f');v.innerHTML='<video src="'+s+'" controls playsinline preload="metadata"></video>'}
   });
 })();
