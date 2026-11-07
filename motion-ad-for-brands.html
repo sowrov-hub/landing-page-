@@ -114,7 +114,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 <section class="sec"><div class="wrap">
   <div class="eb" style="justify-content:center">WATCH BEFORE YOU BUY</div>
   <h2 style="text-align:center">See what you get.</h2>
-  <div class="vg n1"><div><div class="vid r169" data-label="Motion ad video" data-yt="3Ms3Hn_NAac" data-src="">Motion ad video<br>add video</div></div></div>
+  <div class="vg n1"><div><div class="vid r169" data-label="Motion ad video 1" data-yt="3Ms3Hn_NAac" data-src="">Motion ad video<br>add video</div></div><div><div class="vid r169" data-label="Motion ad video 2" data-yt="A_hdQytB4CM" data-src="">Motion ad video<br>add video</div></div></div>
   <div style="text-align:center;margin-top:40px"><a class="btn" id="buy2" href="#">Buy now · $14.99 →</a></div>
 </div></section>
 <footer><div class="wrap">
@@ -128,7 +128,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   /* VIDEOS: on each .vid set data-yt="YOUTUBE_ID" (a YouTube video or Short) or data-src="file.mp4" */
   document.querySelectorAll('.vid').forEach(function(v){
     var y=v.getAttribute('data-yt'),s=v.getAttribute('data-src');
-    if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1" title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}bb.addEventListener('click',function(){on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
+    if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1" title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}v._off=function(){if(on){on=false;cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound'}};bb.addEventListener('click',function(){document.querySelectorAll('.vid.yt').forEach(function(o){if(o!==v&&o._off)o._off()});on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
     else if(s){v.classList.add('f');v.innerHTML='<video src="'+s+'" controls playsinline preload="metadata"></video>'}
   });
 })();
