@@ -142,12 +142,12 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 
 <script>
 (function(){
-  var P=[{f:'explainer-reel.mp4',b:'Film 1',img:'',l:'Explainer Reels'},{f:'motion-ad.mp4',b:'Film 2',img:'',vid:'Videos/motion-ad.mp4',l:'Motion Ad'}];
+  var P=[{f:'explainer-reel.mp4',b:'Film 1',img:'',l:'Explainer Reels'},{f:'motion-ad.mp4',b:'Film 2',img:'',vid:'Videos/motion-ad.mp4?v=2',l:'Motion Ad'}];
   var btns=[].slice.call(document.querySelectorAll('#sel button')),bar=document.getElementById('bar'),shot=document.getElementById('shot'),i=0,t0,raf,D=4500;var DV=15500;
   function show(n){i=n;btns.forEach(function(b,k){b.classList.toggle('on',k===n)});document.getElementById('fn').textContent=P[n].f;document.getElementById('fb').textContent=P[n].b;
     shot.innerHTML=P[n].vid?'<video src="'+P[n].vid+'" autoplay muted loop playsinline preload="auto"></video><button type="button" class="hsnd">\uD83D\uDD07 Tap for sound</button>':P[n].img?'<img src="'+P[n].img+'" alt="'+P[n].l+'">':P[n].l+' preview<br>16:9 · add image or video';t0=performance.now()}
   function tick(now){var p=Math.min((now-t0)/(P[i].vid?DV:D),1);bar.style.width=(p*100)+'%';if(p>=1)show((i+1)%2);raf=requestAnimationFrame(tick)}
-  shot.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.hsnd');if(!b)return;var v=shot.querySelector('video');v.muted=!v.muted;b.textContent=v.muted?'\uD83D\uDD07 Tap for sound':'\uD83D\uDD0A Sound on'});
+  shot.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.hsnd');if(!b)return;var v=shot.querySelector('video');v.muted=!v.muted;v.volume=1;if(v.paused)v.play();b.textContent=v.muted?'\uD83D\uDD07 Tap for sound':'\uD83D\uDD0A Sound on'});
   btns.forEach(function(b,k){b.addEventListener('click',function(){show(k)})});
   show(0);if(!matchMedia('(prefers-reduced-motion:reduce)').matches)raf=requestAnimationFrame(tick);
   document.documentElement.classList.add('nojs');
