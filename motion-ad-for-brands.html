@@ -95,6 +95,10 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 .vid{position:relative;border-radius:20px;overflow:hidden;background:repeating-linear-gradient(135deg,#1A1A1D 0 14px,#18181B 14px 28px);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;text-align:center;color:#7A7A83;font-size:14px;font-weight:600;padding:14px}
 .vid.r916{aspect-ratio:9/16}.vid.r169{aspect-ratio:16/9}
 .vid iframe,.vid video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.vid.yt iframe{inset:-8%;width:116%;height:116%}
+.vid.yt .snd{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;cursor:pointer;color:#fff;font:600 14px/1 inherit;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px;z-index:2}
+.vid.yt .snd{font-family:inherit}
+.vid.yt .pill{background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:10px 16px;backdrop-filter:blur(6px)}
 .vid.f{padding:0;background:#000}
 .cap{text-align:center;color:var(--mut);font-size:14px;margin-top:10px}
 </style></head><body>
@@ -110,7 +114,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 <section class="sec"><div class="wrap">
   <div class="eb" style="justify-content:center">WATCH BEFORE YOU BUY</div>
   <h2 style="text-align:center">See what you get.</h2>
-  <div class="vg n1"><div><div class="vid r169" data-label="Motion ad video" data-yt="" data-src="">Motion ad video<br>add video</div></div></div>
+  <div class="vg n1"><div><div class="vid r169" data-label="Motion ad video" data-yt="3Ms3Hn_NAac" data-src="">Motion ad video<br>add video</div></div></div>
   <div style="text-align:center;margin-top:40px"><a class="btn" id="buy2" href="#">Buy now · $14.99 →</a></div>
 </div></section>
 <footer><div class="wrap">
@@ -124,7 +128,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   /* VIDEOS: on each .vid set data-yt="YOUTUBE_ID" (a YouTube video or Short) or data-src="file.mp4" */
   document.querySelectorAll('.vid').forEach(function(v){
     var y=v.getAttribute('data-yt'),s=v.getAttribute('data-src');
-    if(y){v.classList.add('f');v.innerHTML='<iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/'+y+'?playsinline=1&rel=0&modestbranding=1" title="'+v.getAttribute('data-label')+'" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>'}
+    if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1" title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}bb.addEventListener('click',function(){on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
     else if(s){v.classList.add('f');v.innerHTML='<video src="'+s+'" controls playsinline preload="metadata"></video>'}
   });
 })();
