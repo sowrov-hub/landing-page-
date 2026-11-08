@@ -114,7 +114,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 <section class="sec"><div class="wrap">
   <div class="eb" style="justify-content:center">WATCH BEFORE YOU BUY</div>
   <h2 style="text-align:center">See what you can make.</h2>
-  <div class="vg n3"><div><div class="vid r916" data-label="Video 1" data-yt="9cxQrYLTpGs" data-src="">Video 1<br>add video</div></div><div><div class="vid r916" data-label="Video 2" data-yt="QR8Urt9RJJ0" data-src="">Video 2<br>add video</div></div><div><div class="vid r916" data-label="Video 3" data-yt="1-o9AxWcWQ8" data-src="">Video 3<br>add video</div></div></div>
+  <div class="vg n3"><div><div class="vid r916" data-label="Video 1" data-yt="9cxQrYLTpGs" data-src="">Video 1<br>add video</div></div><div><div class="vid r916" data-label="Video 2" data-yt="QR8Urt9RJJ0" data-src="">Video 2<br>add video</div></div><div><div class="vid r916" data-label="Video 3" data-yt="1-o9AxWcWQ8" data-src="">Video 3<br>add video</div></div><div><div class="vid r916" data-label="Video 4" data-yt="" data-src="Videos/facelock-explainer.mp4?v=1">Video 4<br>add video</div></div></div>
   <div style="text-align:center;margin-top:40px"><a class="btn" id="buy2" href="#">Buy now · $17 →</a></div>
 </div></section>
 <footer><div class="wrap">
@@ -129,7 +129,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   document.querySelectorAll('.vid').forEach(function(v){
     var y=v.getAttribute('data-yt'),s=v.getAttribute('data-src');
     if(y){v.classList.add('f','yt');v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1&origin='+encodeURIComponent(location.origin)+'" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="'+v.getAttribute('data-label')+'" allow="autoplay; encrypted-media"></iframe><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var f=v.querySelector('iframe'),b=v.querySelector('.pill'),bb=v.querySelector('.snd'),on=false;function cmd(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')}v._off=function(){if(on){on=false;cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound'}};bb.addEventListener('click',function(){document.querySelectorAll('.vid.yt').forEach(function(o){if(o!==v&&o._off)o._off()});on=!on;if(on){cmd('unMute');cmd('setVolume',[100]);cmd('playVideo');b.textContent='\uD83D\uDD0A Sound on';}else{cmd('mute');b.textContent='\uD83D\uDD07 Tap for sound';}});}
-    else if(s){v.classList.add('f');v.innerHTML='<video src="'+s+'" controls playsinline preload="metadata"></video>'}
+    else if(s){v.classList.add('f','yt');v.innerHTML='<video src="'+s+'" autoplay muted loop playsinline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video><button class="snd" type="button" aria-label="Toggle sound"><span class="pill">\uD83D\uDD07 Tap for sound</span></button>';var mv=v.querySelector('video'),mp=v.querySelector('.pill');v._off=function(){mv.muted=true;mp.textContent='\uD83D\uDD07 Tap for sound'};v.querySelector('.snd').addEventListener('click',function(){document.querySelectorAll('.vid.yt').forEach(function(o){if(o!==v&&o._off)o._off()});mv.muted=!mv.muted;mv.volume=1;if(mv.paused)mv.play();mp.textContent=mv.muted?'\uD83D\uDD07 Tap for sound':'\uD83D\uDD0A Sound on'})}
   });
 })();
 </script></body></html>

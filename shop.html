@@ -11,6 +11,19 @@ body{margin:0;background:var(--bg);color:var(--tx);font-family:'DM Sans',system-
 a{color:inherit;text-decoration:none}
 h1,h2,h3{font-family:'DM Sans',sans-serif;margin:0;font-weight:700;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.car-w{position:relative;margin-top:30px}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px calc(50% - 130px) 24px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+.ci{flex:0 0 260px;aspect-ratio:9/16;position:relative;scroll-snap-align:center;border-radius:22px;overflow:hidden;background:#000;border:1px solid var(--line);transform:scale(.86);opacity:.5;filter:blur(3px);transition:transform .35s ease,opacity .35s ease,filter .35s ease;cursor:pointer}
+.ci.on{transform:none;opacity:1;filter:none}
+.ci img,.ci video,.ci iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none}
+.ci iframe{inset:-8%;width:116%;height:116%}
+.ci .sb{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;color:#fff;font:600 13px 'DM Sans',sans-serif;cursor:pointer;z-index:2}
+.ci .sb span{background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:9px 15px;backdrop-filter:blur(6px)}
+.cb{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(17,17,19,.85);border:1px solid var(--line);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.cb.l{left:max(12px,calc(50% - 430px))}.cb.r{right:max(12px,calc(50% - 430px))}
+@media(max-width:760px){.ci{flex-basis:56vw}.car{padding-inline:calc(50% - 28vw)}.cb{display:none}}
+@media(prefers-reduced-motion:reduce){.ci{transition:none}}
 .promo{background:var(--red);text-align:center;font-size:13.5px;font-weight:600;padding:7px 12px}
 nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px}
 .logo{font-weight:700;letter-spacing:.16em;font-size:14px}
@@ -115,6 +128,14 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
     <a class="pc rv" href="motion-ad-for-brands.html"><div class="pi" data-ph>Motion Ad cover · 16:9<span class="bd">Coming soon</span></div><div class="pb"><small>Motion video for brands</small><h3>Motion Ad For Brands With Claude</h3><p>Turn a brand, app or website into a polished motion ad. Watch the example before you buy.</p><div class="pr"><span>$14.99</span></div><span class="btn full">See the video →</span></div></a>
   </div></section>
 
+<section class="sec cen" id="watch"><div class="wrap">
+  <div class="eb">EXPLAINER REELS</div>
+  <h2>Watch what you'll make.</h2>
+  <p class="sub">Swipe to see more. Tap the video for sound.</p>
+</div>
+<div class="car-w"><button class="cb l" type="button" aria-label="Previous">&#8249;</button><div class="car" id="car"></div><button class="cb r" type="button" aria-label="Next">&#8250;</button></div>
+</section>
+
 <section class="sec cen" id="how"><div class="wrap">
   <h2>Make one. Then make your next.</h2>
   <div class="st" style="text-align:left">
@@ -155,4 +176,18 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 })();
 </script>
 <script>(function(){var el=document.getElementById('tw');if(!el||matchMedia('(prefers-reduced-motion:reduce)').matches)return;var W=['Make','Edit'],i=0,t='Make',n=4,d=0;function go(){if(d===1){if(n<t.length){n++;el.textContent=t.slice(0,n);return setTimeout(go,100)}d=0;return setTimeout(go,2000)}if(n>0){n--;el.textContent=t.slice(0,n);return setTimeout(go,70)}i=(i+1)%2;t=W[i];document.getElementById('sz').textContent=t;d=1;setTimeout(go,100)}setTimeout(go,2000)})();</script>
+<script>(function(){var V=[{m:'Videos/facelock-explainer.mp4?v=1'},{y:'9cxQrYLTpGs'},{y:'QR8Urt9RJJ0'},{y:'1-o9AxWcWQ8'},{m:'Videos/explainer-reel.mp4?v=1'}];var car=document.getElementById('car');if(!car)return;var items=[],act=-1,tm;
+V.forEach(function(d,i){var c=document.createElement('div');c.className='ci';c.innerHTML=d.y?'<img src="https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg" alt="" loading="lazy">':'<video src="'+d.m+'#t=0.1" muted playsinline preload="metadata"></video>';c.addEventListener('click',function(){if(i!==act)c.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});car.appendChild(c);items.push(c)});
+function stop(c){var b=c.querySelector('.sb');if(b)b.remove();var f=c.querySelector('iframe');if(f){var d=V[items.indexOf(c)];f.remove();var im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg';im.alt='';c.prepend(im)}var v=c.querySelector('video');if(v){v.pause();v.muted=true}}
+function play(i){var c=items[i],d=V[i];var b=document.createElement('button');b.type='button';b.className='sb';b.innerHTML='<span>\uD83D\uDD07 Tap for sound</span>';var sp=b.firstChild,on=false;
+if(d.y){var im=c.querySelector('img');if(im)im.remove();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+d.y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+d.y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1&origin='+encodeURIComponent(location.origin);f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');f.setAttribute('allow','autoplay; encrypted-media');f.title='Explainer reel';c.prepend(f);
+b.addEventListener('click',function(){on=!on;var cm=function(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')};if(on){cm('unMute');cm('setVolume',[100]);cm('playVideo')}else cm('mute');sp.textContent=on?'\uD83D\uDD0A Sound on':'\uD83D\uDD07 Tap for sound'})}
+else{var v=c.querySelector('video');v.muted=true;v.loop=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});b.addEventListener('click',function(){v.muted=!v.muted;v.volume=1;if(v.paused)v.play();sp.textContent=v.muted?'\uD83D\uDD07 Tap for sound':'\uD83D\uDD0A Sound on'})}
+c.appendChild(b)}
+function pick(){var r=car.getBoundingClientRect(),mid=r.left+r.width/2,best=0,bd=1e9;items.forEach(function(c,i){var q=c.getBoundingClientRect(),dd=Math.abs(q.left+q.width/2-mid);if(dd<bd){bd=dd;best=i}});if(best===act)return;if(act>=0){items[act].classList.remove('on');stop(items[act])}act=best;items[act].classList.add('on');play(act)}
+car.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(pick,140)},{passive:true});
+var q=document.querySelectorAll('.cb');q[0].addEventListener('click',function(){var n=Math.max(0,act-1);items[n].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});q[1].addEventListener('click',function(){var n=Math.min(items.length-1,act+1);items[n].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
+function init(){items[0].scrollIntoView({inline:'center',block:'nearest'});window.scrollTo(0,window.scrollY);pick()}
+var seen=false;new IntersectionObserver(function(e){if(e[0].isIntersecting&&!seen){seen=true;car.scrollLeft=0;pick()}else if(!e[0].isIntersecting&&act>=0){/* keep */}},{threshold:.3}).observe(car);
+car.scrollLeft=0;})();</script>
 </body></html>
