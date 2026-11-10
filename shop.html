@@ -24,6 +24,15 @@ h1,h2,h3{font-family:'DM Sans',sans-serif;margin:0;font-weight:700;letter-spacin
 .cb.l{left:max(12px,calc(50% - 430px))}.cb.r{right:max(12px,calc(50% - 430px))}
 @media(max-width:760px){.ci{flex-basis:56vw}.car{padding-inline:calc(50% - 28vw)}.cb{display:none}}
 @media(prefers-reduced-motion:reduce){.ci{transition:none}}
+.live{max-width:860px;margin:44px auto 0;text-align:center}
+.live h3{font-size:clamp(22px,3.4vw,32px);margin:6px 0 22px}
+.bw{display:block;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#111113;text-align:left;transition:transform .25s,border-color .25s}
+.bw:hover{border-color:#3A3A40;transform:translateY(-3px)}
+.bb{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#161618;border-bottom:1px solid var(--line)}
+.bb i{width:10px;height:10px;border-radius:50%;background:#2C2C30}
+.bb span{margin:0 auto;font-size:12.5px;color:#8A8A92;transform:translateX(-18px)}
+.bw img{display:block;width:100%;height:auto}
+.lb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
 .promo{background:var(--red);text-align:center;font-size:13.5px;font-weight:600;padding:7px 12px}
 nav .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:64px}
 .logo{font-weight:700;letter-spacing:.16em;font-size:14px}
@@ -125,7 +134,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   <p class="sub">Two ways to make videos with Claude.</p>
   <div class="pg">
     <a class="pc rv" href="https://showrovai.gumroad.com/l/explainer-reels-director" target="_blank" rel="noopener"><div class="pi"><img src="explainer-cover.jpeg" alt="Explainer Reels Director for Claude" loading="lazy"><span class="bd">Reels</span></div><div class="pb"><small>Faceless explainer reels</small><h3>Explainer Faceless Reels With Claude</h3><p>Make explainer reels without showing your face. Watch the examples below.</p><div class="pr"><s style="margin:0 8px 0 0">$29</s><span>$17</span></div><span class="btn full">Buy now →</span></div></a>
-    <div class="pc rv"><div class="pi" data-ph>Landing Page cover · 16:9<span class="bd">New</span></div><div class="pb"><small>Build your own website</small><h3>Landing Page Director for Claude</h3><p>Screenshot any website you love. Claude copies the style, asks about your brand, builds your landing page with your words, prices and videos, then puts it live on GitHub for free. No code, no hosting fees, one chat. Includes the Claude skill and a 5-page setup guide.</p><span class="btn full off" id="lpbtn">Link coming soon</span></div></div>
+    <a class="pc rv" href="https://showrovai.gumroad.com/l/landing-page-director" target="_blank" rel="noopener"><div class="pi"><img src="landing-cover.jpeg" alt="Landing Page Director for Claude" loading="lazy"><span class="bd">New</span></div><div class="pb"><small>Build your own website</small><h3>Landing Page Director for Claude</h3><p>Screenshot any website you love. Claude copies the style, asks about your brand, builds your landing page with your words, prices and videos, then puts it live on GitHub for free. No code, no hosting fees, one chat. Includes the Claude skill and a 5-page setup guide.</p><span class="btn full">Buy now →</span></div></a>
   </div></section>
 
 <section class="sec cen" id="watch"><div class="wrap">
@@ -134,6 +143,12 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   <p class="sub">Swipe to see more. Tap the video for sound.</p>
 </div>
 <div class="car-w"><button class="cb l" type="button" aria-label="Previous">&#8249;</button><div class="car" id="car"></div><button class="cb r" type="button" aria-label="Next">&#8250;</button></div>
+<div class="wrap"><div class="live rv">
+  <div class="eb">LIVE SITE</div>
+  <h3>This whole site was built with Claude.</h3>
+  <a class="bw" href="https://showrov.online/shop.html" target="_blank" rel="noopener" aria-label="Open showrov.online"><div class="bb"><i></i><i></i><i></i><span>showrov.online</span></div><img src="site-preview.jpeg" alt="showrov.online homepage" loading="lazy"></a>
+  <div class="lb"><a class="btn" href="https://showrov.online/shop.html" target="_blank" rel="noopener">Visit the live site →</a><a class="btn gh" href="https://showrovai.gumroad.com/l/landing-page-director" target="_blank" rel="noopener">Build yours</a></div>
+</div></div>
 </section>
 
 <section class="sec cen" id="how"><div class="wrap">
