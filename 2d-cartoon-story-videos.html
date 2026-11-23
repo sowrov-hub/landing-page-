@@ -150,6 +150,21 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 .tg{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px;padding:0;list-style:none}
 .tg li{border:1px solid #33333A;border-radius:99px;padding:6px 12px;font-size:13px;color:#D6D6DC;font-weight:600}
 @media(max-width:860px){.pd{grid-template-columns:1fr}.pdi{padding:4px}}
+.car-w{position:relative;margin-top:30px}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px calc(50% - 130px) 24px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.car::-webkit-scrollbar{display:none}
+.ci{flex:0 0 260px;aspect-ratio:9/16;position:relative;scroll-snap-align:center;border-radius:22px;overflow:hidden;background:#000;border:1px solid var(--line);transform:scale(.86);opacity:.5;filter:blur(3px);transition:transform .35s ease,opacity .35s ease,filter .35s ease;cursor:pointer}
+.ci.on{transform:none;opacity:1;filter:none}
+.ci img,.ci video,.ci iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;pointer-events:none}
+.ci iframe{inset:-8%;width:116%;height:116%}
+.ci .sb{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0;display:flex;align-items:flex-end;justify-content:center;padding-bottom:14px;color:#fff;font:600 13px 'DM Sans',sans-serif;cursor:pointer;z-index:2}
+.ci .sb span{background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:9px 15px;backdrop-filter:blur(6px)}
+.cb{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(17,17,19,.85);border:1px solid var(--line);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.cb.l{left:max(12px,calc(50% - 520px))}.cb.r{right:max(12px,calc(50% - 520px))}
+@media(max-width:760px){.ci{flex-basis:56vw}.car{padding-inline:calc(50% - 28vw)}.cb{display:none}}
+@media(prefers-reduced-motion:reduce){.ci{transition:none}}
+.ci.land{flex-basis:480px;aspect-ratio:16/9;align-self:center}
+@media(max-width:760px){.ci.land{flex-basis:84vw}}
 </style></head>
 <body>
 <div class="promo">Use code <b>showrov10</b> for 10% off</div>
@@ -167,12 +182,9 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   <div class="eb">2D CARTOON STORY VIDEOS</div>
   <h2>Watch what you'll make.</h2>
   <p class="sub">Reels, Shorts, TikTok and YouTube. Tap a video for sound.</p>
-  <div class="vr">
-    <figure class="vc port"><div class="vf"><video src="Videos/cartoon-sam.mp4?v=1" poster="cartoon-sam-poster.jpg" muted loop playsinline preload="metadata"></video><span class="vs">&#128263; Tap for sound</span></div><figcaption>9:16 &middot; Reels, Shorts, TikTok</figcaption></figure>
-    <figure class="vc land"><div class="vf"><video src="Videos/cartoon-landscape.mp4?v=1" poster="cartoon-landscape-poster.jpg" muted loop playsinline preload="metadata"></video><span class="vs">&#128263; Tap for sound</span></div><figcaption>16:9 &middot; YouTube</figcaption></figure>
-    <figure class="vc port"><div class="vf"><video src="Videos/cartoon-thief.mp4?v=1" poster="cartoon-thief-poster.jpg" muted loop playsinline preload="metadata"></video><span class="vs">&#128263; Tap for sound</span></div><figcaption>9:16 &middot; Reels, Shorts, TikTok</figcaption></figure>
   </div>
-</div></section>
+<div class="car-w"><button class="cb l" type="button" aria-label="Previous">&#8249;</button><div class="car" id="car"></div><button class="cb r" type="button" aria-label="Next">&#8250;</button></div>
+</section>
 
 <section class="sec cen" id="products"><div class="fx" aria-hidden="true"><i class="g" style="left:1%;top:16%;width:281px;height:352px;--d:16s;--x:-1px;--y:-18px;--r0:0deg;--r1:0deg;--o:.9"></i><i class="g" style="left:79%;top:32%;width:415px;height:269px;--d:16s;--x:15px;--y:31px;--r0:0deg;--r1:0deg;--o:.9"></i><i class="s" style="left:96%;top:73%;width:26px;height:26px;--d:16s;--x:2px;--y:-43px;--r0:-18deg;--r1:27deg;--o:0.55"></i><i class="rg" style="left:90%;top:58%;width:55px;height:55px;--d:17s;--x:-20px;--y:-25px;--r0:-9deg;--r1:80deg;--o:0.45"></i><i class="pl" style="left:4%;top:21%;width:14px;height:14px;--d:17s;--x:2px;--y:-37px;--r0:12deg;--r1:66deg;--o:0.70"></i><i class="sq" style="left:96%;top:79%;width:27px;height:27px;--d:14s;--x:-7px;--y:-32px;--r0:-10deg;--r1:122deg;--o:0.70"></i><i class="s" style="left:87%;top:39%;width:34px;height:34px;--d:16s;--x:2px;--y:-28px;--r0:2deg;--r1:136deg;--o:0.70"></i><i class="rg" style="left:94%;top:88%;width:48px;height:48px;--d:12s;--x:30px;--y:-40px;--r0:-10deg;--r1:88deg;--o:0.70"></i><i class="pl" style="left:96%;top:43%;width:23px;height:23px;--d:12s;--x:1px;--y:-28px;--r0:3deg;--r1:39deg;--o:0.55"></i></div><div class="wrap">
   <div class="eb">BUILT FOR YOU</div>
@@ -193,17 +205,21 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
   <div class="fl"><a href="shop.html">&#8592; All products</a><a href="https://instagram.com/showrov.studio" target="_blank" rel="noopener">Instagram @showrov.studio</a><a href="mailto:showrovsa099@gmail.com">showrovsa099@gmail.com</a></div>
 </div></footer>
 
-<script>
-(function(){
-  var vf=[].slice.call(document.querySelectorAll('.vf'));
-  function pl(v){var p=v.play();if(p&&p.catch)p.catch(function(){})}
-  vf.forEach(function(f){var v=f.querySelector('video'),b=f.querySelector('.vs');
-    f.addEventListener('click',function(){var on=v.muted;vf.forEach(function(o){o.querySelector('video').muted=true;o.querySelector('.vs').textContent='🔇 Tap for sound'});if(on){v.muted=false;v.volume=1;b.textContent='🔊 Sound on';pl(v)}});
-    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)pl(v);else v.pause()})},{threshold:.35}).observe(f)}else pl(v)});
-  var big=document.getElementById('pdi'),tb=[].slice.call(document.querySelectorAll('.pdt button'));
-  tb.forEach(function(b){b.addEventListener('click',function(){big.src=b.getAttribute('data-s');tb.forEach(function(x){x.classList.toggle('on',x===b)})})});
-  document.documentElement.classList.add('nojs');
-  if('IntersectionObserver' in window){document.documentElement.classList.remove('nojs');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}
-})();
+<script>(function(){
+var V=[{m:'Videos/cartoon-sam.mp4?v=1'},{m:'Videos/cartoon-landscape.mp4?v=1',land:1},{m:'Videos/cartoon-thief.mp4?v=1'}];var car=document.getElementById('car');if(!car)return;var items=[],act=-1,tm;
+V.forEach(function(d,i){var c=document.createElement('div');c.className='ci'+(d.land?' land':'');c.innerHTML=d.y?'<img src="https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg" alt="" loading="lazy">':'<video src="'+d.m+'#t=0.1" muted playsinline preload="metadata"></video>';c.addEventListener('click',function(){if(i!==act)c.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});car.appendChild(c);items.push(c)});
+function stop(c){var b=c.querySelector('.sb');if(b)b.remove();var f=c.querySelector('iframe');if(f){var d=V[items.indexOf(c)];f.remove();var im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg';im.alt='';c.prepend(im)}var v=c.querySelector('video');if(v){v.pause();v.muted=true}}
+function play(i){var c=items[i],d=V[i];var b=document.createElement('button');b.type='button';b.className='sb';b.innerHTML='<span>\uD83D\uDD07 Tap for sound</span>';var sp=b.firstChild,on=false;
+if(d.y){var im=c.querySelector('img');if(im)im.remove();var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+d.y+'?autoplay=1&mute=1&controls=0&loop=1&playlist='+d.y+'&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&fs=0&enablejsapi=1&origin='+encodeURIComponent(location.origin);f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');f.setAttribute('allow','autoplay; encrypted-media');f.title='Explainer reel';c.prepend(f);
+b.addEventListener('click',function(){on=!on;var cm=function(fn,a){f.contentWindow.postMessage(JSON.stringify({event:'command',func:fn,args:a||[]}),'*')};if(on){cm('unMute');cm('setVolume',[100]);cm('playVideo')}else cm('mute');sp.textContent=on?'\uD83D\uDD0A Sound on':'\uD83D\uDD07 Tap for sound'})}
+else{var v=c.querySelector('video');v.muted=true;v.loop=true;var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});b.addEventListener('click',function(){v.muted=!v.muted;v.volume=1;if(v.paused)v.play();sp.textContent=v.muted?'\uD83D\uDD07 Tap for sound':'\uD83D\uDD0A Sound on'})}
+c.appendChild(b)}
+function pick(){var r=car.getBoundingClientRect(),mid=r.left+r.width/2,best=0,bd=1e9;items.forEach(function(c,i){var q=c.getBoundingClientRect(),dd=Math.abs(q.left+q.width/2-mid);if(dd<bd){bd=dd;best=i}});if(best===act)return;if(act>=0){items[act].classList.remove('on');stop(items[act])}act=best;items[act].classList.add('on');play(act)}
+car.addEventListener('scroll',function(){clearTimeout(tm);tm=setTimeout(pick,140)},{passive:true});
+var q=document.querySelectorAll('.cb');q[0].addEventListener('click',function(){var n=Math.max(0,act-1);items[n].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});q[1].addEventListener('click',function(){var n=Math.min(items.length-1,act+1);items[n].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});
+function init(){items[0].scrollIntoView({inline:'center',block:'nearest'});window.scrollTo(0,window.scrollY);pick()}
+var seen=false;new IntersectionObserver(function(e){if(e[0].isIntersecting&&!seen){seen=true;car.scrollLeft=0;pick()}else if(!e[0].isIntersecting&&act>=0){/* keep */}},{threshold:.3}).observe(car);
+car.scrollLeft=0;})();
+(function(){document.documentElement.classList.add('nojs');if('IntersectionObserver' in window){document.documentElement.classList.remove('nojs');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})}})();
 </script>
 </body></html>
