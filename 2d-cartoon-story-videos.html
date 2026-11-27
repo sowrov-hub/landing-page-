@@ -206,7 +206,7 @@ footer p,footer a{color:var(--mut);font-size:14px}footer a:hover{color:var(--red
 </div></footer>
 
 <script>(function(){
-var V=[{m:'Videos/cartoon-sam.mp4?v=1'},{m:'Videos/cartoon-landscape.mp4?v=1',land:1},{m:'Videos/cartoon-thief.mp4?v=1'}];var car=document.getElementById('car');if(!car)return;var items=[],act=-1,tm;
+var V=[{m:'Videos/cartoon-mrkoo.mp4?v=1'},{m:'Videos/cartoon-sam.mp4?v=1'},{m:'Videos/cartoon-landscape.mp4?v=1',land:1},{m:'Videos/cartoon-thief.mp4?v=1'}];var car=document.getElementById('car');if(!car)return;var items=[],act=-1,tm;
 V.forEach(function(d,i){var c=document.createElement('div');c.className='ci'+(d.land?' land':'');c.innerHTML=d.y?'<img src="https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg" alt="" loading="lazy">':'<video src="'+d.m+'#t=0.1" muted playsinline preload="metadata"></video>';c.addEventListener('click',function(){if(i!==act)c.scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'})});car.appendChild(c);items.push(c)});
 function stop(c){var b=c.querySelector('.sb');if(b)b.remove();var f=c.querySelector('iframe');if(f){var d=V[items.indexOf(c)];f.remove();var im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+d.y+'/hqdefault.jpg';im.alt='';c.prepend(im)}var v=c.querySelector('video');if(v){v.pause();v.muted=true}}
 function play(i){var c=items[i],d=V[i];var b=document.createElement('button');b.type='button';b.className='sb';b.innerHTML='<span>\uD83D\uDD07 Tap for sound</span>';var sp=b.firstChild,on=false;
